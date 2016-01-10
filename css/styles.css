@@ -1,4 +1,21 @@
-p {
-  color: red; }
+.container nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px; }
+  .container nav button {
+    background-color: white;
+    border: none;
+    font-size: 16px; }
+.container .ticker {
+  border: 1px solid black;
+  height: 30px; }
+.container .tagline {
+  display: flex;
+  justify-content: center; }
+.container .signin {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  height: 300px; }
 
 /*# sourceMappingURL=styles.css.map */
