@@ -1,3 +1,33 @@
-p {
-  color: red;
+.container {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    button{
+      background-color: white;
+      border: none;
+      font-size: 16px;
+    }
+  }
+  .ticker{
+    border: 1px solid black;
+    height: 30px;
+  }
+  .tagline{
+    display: flex;
+    justify-content: center;
+  }
+  .signin{
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    height: 300px;
+  }
+  .leaderboard{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+    height: 300px;
+  }
 }
