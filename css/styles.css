@@ -1,27 +1,62 @@
-.container nav {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px; }
-  .container nav button {
-    background-color: white;
-    border: none;
-    font-size: 16px; }
-.container .ticker {
-  border: 1px solid black;
-  height: 30px; }
-.container .tagline {
-  display: flex;
-  justify-content: center; }
-.container .signin {
-  display: flex;
-  justify-content: center;
-  border: 1px solid black;
-  height: 300px; }
-.container .leaderboard {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  border: 1px solid black;
-  height: 300px; }
+body {
+  background-color: #011041; }
+  body .container h1 {
+    color: #dddddf;
+    font-family: "Roboto Condensed", sans-serif; }
+  body .container h2 {
+    color: #dddddf;
+    font-family: "Roboto Condensed", sans-serif; }
+  body .container h3 {
+    color: #dddddf;
+    font-family: "Roboto Condensed", sans-serif; }
+  body .container p {
+    color: #dddddf;
+    font-family: "Roboto Condensed", sans-serif; }
+  body .container nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; }
+    body .container nav button {
+      background-color: #011041;
+      border: none;
+      font-size: 16px;
+      font-family: "Roboto Condensed", sans-serif;
+      color: #dddddf; }
+  body .container .ticker {
+    border: 1px solid black;
+    height: 30px;
+    background-color: #4d4d4d; }
+  body .container .tagline {
+    display: flex;
+    justify-content: center; }
+  body .container .signin {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid #4d4d4d;
+    border-radius: 5px;
+    height: 300px;
+    margin-bottom: 10px; }
+  body .container .leaderboard {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid #4d4d4d;
+    border-radius: 5px;
+    height: 300px;
+    margin-bottom: 10px; }
+  body .container #about {
+    display: none; }
+  body .container #research {
+    display: none; }
+  body .container #standings {
+    display: none; }
+  body .container #support {
+    display: none; }
+  body .container footer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 10px; }
 
 /*# sourceMappingURL=styles.css.map */
