@@ -1,33 +1,83 @@
-.container {
-  nav {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    button{
-      background-color: white;
-      border: none;
-      font-size: 16px;
+$page-background-color: hsl(226, 96%, 13%);
+$font-color: hsl(224, 4%, 87%);
+$font-stack: 'Roboto Condensed', sans-serif;
+$border-color: hsl(211, 0%, 30%);
+
+body{
+  background-color: $page-background-color;
+  .container {
+    h1{
+      color: $font-color;
+      font-family: $font-stack;
     }
-  }
-  .ticker{
-    border: 1px solid black;
-    height: 30px;
-  }
-  .tagline{
-    display: flex;
-    justify-content: center;
-  }
-  .signin{
-    display: flex;
-    justify-content: center;
-    border: 1px solid black;
-    height: 300px;
-  }
-  .leaderboard{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    border: 1px solid black;
-    height: 300px;
+    h2{
+      color: $font-color;
+      font-family: $font-stack;
+    }
+    h3{
+      color: $font-color;
+      font-family: $font-stack;
+    }
+    p{
+      color: $font-color;
+      font-family: $font-stack;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      button{
+        background-color: $page-background-color;
+        border: none;
+        font-size: 16px;
+        font-family: $font-stack;
+        color: $font-color;
+      }
+    }
+    .ticker{
+      border: 1px solid black;
+      height: 30px;
+      background-color: hsl(211, 0%, 30%);
+    }
+    .tagline{
+      display: flex;
+      justify-content: center;
+    }
+    .signin{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      border: 2px solid $border-color;
+      border-radius: 5px;
+      height: 300px;
+      margin-bottom: 10px;
+    }
+    .leaderboard{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      border: 2px solid $border-color;
+      border-radius: 5px;
+      height: 300px;
+      margin-bottom: 10px;
+    }
+    #about{
+      display: none;
+    }
+    #research{
+      display: none;
+    }
+    #standings{
+      display: none;
+    }
+    #support{
+      display: none;
+    }
+    footer{
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      margin-top: 10px;
+    }
   }
 }
