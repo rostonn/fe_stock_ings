@@ -1,5 +1,39 @@
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 body {
   background-color: #011041; }
+  body #greeting {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  body #main {
+    animation: fadeIn;
+    opacity: 0;
+    -webkit-animation: fadeIn ease-in 1;
+    -moz-animation: fadeIn ease-in 1;
+    animation: fadeIn ease-in;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: 3s;
+    -moz-animation-delay: 3s;
+    animation-delay: 3s; }
   body .container h1 {
     color: #dddddf;
     font-family: "Roboto Condensed", sans-serif; }
@@ -25,7 +59,13 @@ body {
   body .container .ticker {
     border: 1px solid black;
     height: 30px;
-    background-color: #4d4d4d; }
+    background-color: #4d4d4d;
+    white-space: nowrap;
+    overflow: hidden; }
+    body .container .ticker p {
+      white-space: nowrap;
+      display: inline;
+      width: auto; }
   body .container .tagline {
     display: flex;
     justify-content: center; }

@@ -116,4 +116,17 @@ $(document).ready(function(){
  }).mouseout(function(){
    $(this).css('background-color', 'hsl(226, 96%, 13%)');
  });
+
+ var ticker = $('.ticker');
+ ticker.each(function(){
+   var margin = $(this),indent = margin.width();
+   margin.ticker = function(){
+     indent--;
+     margin.css('text-indent', indent);
+     if(indent < -1 * margin.children('p').width()){
+       indent = margin.width()
+     }
+   };
+   margin.data('interval', setInterval(margin.ticker, 1000/60));
+ });
 })
