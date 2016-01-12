@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/bootstrap-social.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -22,8 +23,8 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-md-12" id="greeting">
-          <p>Hello</p>
+        <div class="col-md-12" class="open" id="greeting">
+          <h1>Welcome to Stock Kings</h1>
         </div>
       </div>
     </div>
@@ -57,6 +58,12 @@
         <div class="row">
           <div class="col-md-12" id="about">
             <h1>About Stock Kings</h1>
+            <h2>What is it?</h2>
+            <p>
+              Stock Kings is a web app that simulates the stock market. Users are able to buy and sell stock, as well as monitor their performance. Users will also be able to see how they stand against others.
+            </p>
+            <h2>How to play</h2>
+              <p>First, users must sign up via Google or Facebook. Once logged in, users will be able to navigate between their home page and a trading page. On the user's home page, users will be able to see the current stocks they own and purchase price information. On the trading page, users will be able to buy and sell stock and their final balance for the day will be tallied.</p>
           </div>
         </div>
       </div>
@@ -85,7 +92,7 @@
         <div class="row">
           <div class="col-md-12">
             <h2 class="tagline">Tagline</h2>
-            <p class="tagline">Brunch tacos pinterest, cardigan green juice fixie bicycle rights intelligentsia gastropub gochujang YOLO farm-to-table authentic keytar.</p>
+            <p class="tagline">Come play the most entertaining and real-time stock market simulator on the web. Join Now!</p>
           </div>
         </div>
       </div>
@@ -94,7 +101,10 @@
           <div class="col-md-6 col-md-offset-3">
             <section class="signin">
               <h3><u>Sign Up & Login</u></h3>
-              <p id="google"><a>Trading Page</a></p>
+              <!-- <p id="google"><a>Trading Page</a></p> -->
+              <a class="btn btn-lg btn-social-icon btn-google" title="Sign in with Google" rel="nofollow">
+  <span class="fa fa-google"></span>
+             </a>
             </section>
           </div>
         </div>

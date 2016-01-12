@@ -35,6 +35,7 @@ $(document).ready(function(){
     $('.signin').css('display', 'none');
     $('.leaderboard').css('display', 'none');
     $('.tagline').css('display', 'none');
+    $('table').css('display', 'none');
   });
   $('.researchButton').on('click', function(event){
     $('.aboutButton').css('background-color', 'hsl(226, 96%, 13%)');
@@ -53,6 +54,7 @@ $(document).ready(function(){
     $('.signin').css('display', 'none');
     $('.leaderboard').css('display', 'none');
     $('.tagline').css('display', 'none');
+    $('table').css('display', 'none');
   });
   $('.standingsButton').on('click', function(event){
     $('.aboutButton').css('background-color', 'hsl(226, 96%, 13%)');
@@ -71,6 +73,7 @@ $(document).ready(function(){
     $('.signin').css('display', 'none');
     $('.leaderboard').css('display', 'none');
     $('.tagline').css('display', 'none');
+    $('table').css('display', 'none');
   });
   $('.supportButton').on('click', function(event){
     $('.aboutButton').css('background-color', 'hsl(226, 96%, 13%)');
@@ -89,6 +92,7 @@ $(document).ready(function(){
     $('.signin').css('display', 'none');
     $('.leaderboard').css('display', 'none');
     $('.tagline').css('display', 'none');
+    $('table').css('display', 'none');
  });
  $('.homeButton').mouseover(function(){
    $(this).css('background-color', 'hsl(125, 62%, 32%)');
@@ -115,4 +119,26 @@ $(document).ready(function(){
  }).mouseout(function(){
    $(this).css('background-color', 'hsl(226, 96%, 13%)');
  });
+
+ var ticker = $('.ticker');
+ ticker.each(function(){
+   var margin = $(this),indent = margin.width();
+   margin.ticker = function(){
+     indent--;
+     margin.css('text-indent', indent);
+     if(indent < -1 * margin.children('.dataContainer').width()){
+       indent = margin.width()
+     }
+   };
+   margin.data('interval', setInterval(margin.ticker, 1000/60));
+ });
+
+ $.get('http://localhost:3000/symbols', function(data){
+  //  var sortedData = data.sort();
+   for(var i = 0; i < data.length; i++){
+     var stockTickerDiv = document.createElement('div');
+     stockTickerDiv.innerText = data[i].symbol;
+     $('.dataContainer').append(stockTickerDiv);
+   }
+ })
 })

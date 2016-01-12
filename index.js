@@ -1,4 +1,10 @@
 $(document).ready(function(){
+  var greeting = $('#greeting');
+  greeting.fadeOut(3000, function(){
+    greeting.removeClass('open');
+    greeting.height(0);
+  })
+
   $('.homeButton').prop('disabled', true);
   $('.homeButton').css('background-color', 'hsl(125, 62%, 32%)')
   $('.homeButton').on('click', function(event){
@@ -131,8 +137,9 @@ $(document).ready(function(){
  });
 
  $.get('http://localhost:3000/symbols', function(data){
+  //  var sortedData = data.sort();
+   console.log(data);
    for(var i = 0; i < data.length; i++){
-    //  console.log(data[i].name);
      var stockTickerDiv = document.createElement('div');
      stockTickerDiv.innerText = data[i].symbol;
      $('.dataContainer').append(stockTickerDiv);
