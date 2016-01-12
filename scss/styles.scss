@@ -3,27 +3,27 @@ $font-color: hsl(224, 4%, 87%);
 $font-stack: 'Roboto Condensed', sans-serif;
 $border-color: hsl(211, 0%, 30%);
 
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-  } to {
-    opacity: 1;
-  }
-}
-@-moz-keyframes fadeIn {
-  from {
-    opacity: 0;
-  } to {
-    opacity: 1;
-  }
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  } to {
-    opacity: 1;
-  }
-}
+// @-webkit-keyframes fadeIn {
+//   from {
+//     opacity: 0;
+//   } to {
+//     opacity: 1;
+//   }
+// }
+// @-moz-keyframes fadeIn {
+//   from {
+//     opacity: 0;
+//   } to {
+//     opacity: 1;
+//   }
+// }
+// @keyframes fadeIn {
+//   from {
+//     opacity: 0;
+//   } to {
+//     opacity: 1;
+//   }
+// }
 
 body{
   #greeting{
@@ -32,26 +32,26 @@ body{
     justify-content: center;
   }
   background-color: $page-background-color;
-  #main{
-    animation: fadeIn;
-
-    opacity: 0;
-    -webkit-animation: fadeIn ease-in 1;
-    -moz-animation: fadeIn ease-in 1;
-    animation: fadeIn ease-in;
-
-    -webkit-animation-fill-mode: forwards;
-    -moz-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-
-    -webkit-animation-duration: 1s;
-    -moz-animation-duration: 1s;
-    animation-duration: 1s;
-
-    -webkit-animation-delay: 3s;
-    -moz-animation-delay: 3s;
-    animation-delay: 3s;
-  }
+  // #main{
+  //   animation: fadeIn;
+  //
+  //   opacity: 0;
+  //   -webkit-animation: fadeIn ease-in 1;
+  //   -moz-animation: fadeIn ease-in 1;
+  //   animation: fadeIn ease-in;
+  //
+  //   -webkit-animation-fill-mode: forwards;
+  //   -moz-animation-fill-mode: forwards;
+  //   animation-fill-mode: forwards;
+  //
+  //   -webkit-animation-duration: 1s;
+  //   -moz-animation-duration: 1s;
+  //   animation-duration: 1s;
+  //
+  //   -webkit-animation-delay: 3s;
+  //   -moz-animation-delay: 3s;
+  //   animation-delay: 3s;
+  // }
   .container {
     h1{
       color: $font-color;
@@ -84,10 +84,13 @@ body{
     .ticker{
       border: 1px solid black;
       height: 30px;
-      background-color: hsl(211, 0%, 30%);
+      background-color: black;
       white-space: nowrap;
       overflow: hidden;
-      p{
+      div{
+        color: hsl(224, 4%, 87%);
+        font-family: $font-stack;
+        margin-right: 40px;
         white-space: nowrap;
         display: inline;
         width: auto;
