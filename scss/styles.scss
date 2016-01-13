@@ -6,6 +6,7 @@ $border-color: hsl(211, 0%, 30%);
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
+
   } to {
     opacity: 1;
   }
@@ -13,6 +14,7 @@ $border-color: hsl(211, 0%, 30%);
 @-moz-keyframes fadeIn {
   from {
     opacity: 0;
+
   } to {
     opacity: 1;
   }
@@ -20,18 +22,19 @@ $border-color: hsl(211, 0%, 30%);
 @keyframes fadeIn {
   from {
     opacity: 0;
+
   } to {
     opacity: 1;
   }
 }
 
-body{
-  #greeting{
-    display: flex;
+body {
+  #greeting {
     align-items: center;
+    display: flex;
+    height: 500px;
     justify-content: center;
     overflow: hidden;
-    height: 500px;
   }
   background-color: $page-background-color;
   #main{
@@ -55,19 +58,19 @@ body{
     animation-delay: 3s;
   }
   .container {
-    h1{
+    h1 {
       color: $font-color;
       font-family: $font-stack;
     }
-    h2{
+    h2 {
       color: $font-color;
       font-family: $font-stack;
     }
-    h3{
+    h3 {
       color: $font-color;
       font-family: $font-stack;
     }
-    p{
+    p {
       color: $font-color;
       font-family: $font-stack;
     }
@@ -75,7 +78,7 @@ body{
       display: flex;
       justify-content: space-between;
       margin-top: 20px;
-      button{
+      button {
         background-color: $page-background-color;
         border: none;
         font-size: 16px;
@@ -83,13 +86,13 @@ body{
         color: $font-color;
       }
     }
-    .ticker{
+    .ticker {
       border: 1px solid black;
       height: 30px;
       background-color: black;
       white-space: nowrap;
       overflow: hidden;
-      div{
+      div {
         color: hsl(224, 4%, 87%);
         font-family: $font-stack;
         margin-right: 40px;
@@ -98,11 +101,11 @@ body{
         width: auto;
       }
     }
-    .tagline{
+    .tagline {
       display: flex;
       justify-content: center;
     }
-    .signin{
+    .signin {
       display: flex;
       align-items: center;
       flex-direction: column;
@@ -111,7 +114,7 @@ body{
       height: 300px;
       margin-bottom: 10px;
     }
-    .leaderboard{
+    .leaderboard {
       display: flex;
       align-items: center;
       flex-direction: column;
@@ -120,19 +123,19 @@ body{
       height: 300px;
       margin-bottom: 10px;
     }
-    #about{
+    #about {
       display: none;
     }
-    #research{
+    #research {
       display: none;
     }
-    #standings{
+    #standings {
       display: none;
     }
-    #support{
+    #support {
       display: none;
     }
-    footer{
+    footer {
       display: flex;
       justify-content: center;
       align-items: flex-end;
