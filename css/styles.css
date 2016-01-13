@@ -18,7 +18,9 @@ body {
   body #greeting {
     display: flex;
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+    overflow: hidden;
+    height: 500px; }
   body #main {
     animation: fadeIn;
     opacity: 0;
@@ -59,10 +61,13 @@ body {
   body .container .ticker {
     border: 1px solid black;
     height: 30px;
-    background-color: #4d4d4d;
+    background-color: black;
     white-space: nowrap;
     overflow: hidden; }
-    body .container .ticker p {
+    body .container .ticker div {
+      color: #dddddf;
+      font-family: "Roboto Condensed", sans-serif;
+      margin-right: 40px;
       white-space: nowrap;
       display: inline;
       width: auto; }

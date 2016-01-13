@@ -1,4 +1,10 @@
 $(document).ready(function(){
+  var greeting = $('#greeting');
+  greeting.fadeOut(3000, function(){
+    greeting.removeClass('open');
+    greeting.height(0);
+  })
+
   $('.homeButton').prop('disabled', true);
   $('.homeButton').css('background-color', 'hsl(125, 62%, 32%)')
   $('.homeButton').on('click', function(event){
@@ -123,10 +129,21 @@ $(document).ready(function(){
    margin.ticker = function(){
      indent--;
      margin.css('text-indent', indent);
-     if(indent < -1 * margin.children('p').width()){
+     if(indent < -1 * margin.children('.dataContainer').width()){
        indent = margin.width()
      }
    };
    margin.data('interval', setInterval(margin.ticker, 1000/60));
  });
+
+ $.get('http://localhost:3000/symbols', function(data){
+  //  var sortedData = data.sort();
+   console.log(data);
+   for(var i = 0; i < data.length; i++){
+     var stockTickerDiv = document.createElement('div');
+     stockTickerDiv.innerText = data[i].symbol;
+     $('.dataContainer').append(stockTickerDiv);
+     console.log(stockTickerDiv);
+   }
+ })
 })

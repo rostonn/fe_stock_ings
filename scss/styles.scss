@@ -30,6 +30,8 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    height: 500px;
   }
   background-color: $page-background-color;
   #main{
@@ -84,10 +86,13 @@ body{
     .ticker{
       border: 1px solid black;
       height: 30px;
-      background-color: hsl(211, 0%, 30%);
+      background-color: black;
       white-space: nowrap;
       overflow: hidden;
-      p{
+      div{
+        color: hsl(224, 4%, 87%);
+        font-family: $font-stack;
+        margin-right: 40px;
         white-space: nowrap;
         display: inline;
         width: auto;
