@@ -16,11 +16,11 @@
 body {
   background-color: #011041; }
   body #greeting {
-    display: flex;
     align-items: center;
+    display: flex;
+    height: 500px;
     justify-content: center;
-    overflow: hidden;
-    height: 500px; }
+    overflow: hidden; }
   body #main {
     animation: fadeIn;
     opacity: 0;
@@ -73,7 +73,10 @@ body {
       width: auto; }
   body .container .tagline {
     display: flex;
-    justify-content: center; }
+    justify-content: center;
+    font-size: 22px;
+    margin-top: 25px;
+    text-align: justify; }
   body .container .signin {
     display: flex;
     align-items: center;
@@ -90,6 +93,8 @@ body {
     border-radius: 5px;
     height: 300px;
     margin-bottom: 10px; }
+    body .container .leaderboard table {
+      border: none; }
   body .container #about {
     display: none; }
   body .container #research {
@@ -98,6 +103,40 @@ body {
     display: none; }
   body .container #support {
     display: none; }
+  body .container #dataButtonsContainer {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around; }
+  body .container table {
+    display: flex;
+    justify-content: center;
+    border: 2px solid #4d4d4d;
+    border-radius: 5px; }
+    body .container table th {
+      color: #dddddf;
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      padding: 5px;
+      text-decoration: underline;
+      text-align: center; }
+    body .container table td {
+      color: #dddddf;
+      font-family: "Roboto Condensed", sans-serif;
+      text-align: center; }
+  body .container .stockSearch {
+    display: flex;
+    flex-direction: column; }
+    body .container .stockSearch label {
+      color: #dddddf;
+      font-family: "Roboto Condensed", sans-serif; }
+    body .container .stockSearch input {
+      width: 50%; }
+  body .container .quantity label {
+    color: #dddddf;
+    font-family: "Roboto Condensed", sans-serif; }
+  body .container .quantity input {
+    width: 8%; }
   body .container footer {
     display: flex;
     justify-content: center;
