@@ -16,11 +16,11 @@
 body {
   background-color: #011041; }
   body #greeting {
-    display: flex;
     align-items: center;
+    display: flex;
+    height: 500px;
     justify-content: center;
-    overflow: hidden;
-    height: 500px; }
+    overflow: hidden; }
   body #main {
     animation: fadeIn;
     opacity: 0;
