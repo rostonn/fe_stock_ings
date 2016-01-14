@@ -110,6 +110,14 @@
     </div>
     <div class="container">
       <div class="row">
+        <div class="col-md-6">
+          <h3 class="chartHeader">Sample Chart</h3>
+          <canvas id="sampleChart" width="400" height="400"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
         <div class="col-md-4">
           <h3 class="balanceHistory">Balance History</h3>
           <table class="balanceHistory">
@@ -133,7 +141,7 @@
         <div class="col-md-6">
           <form class="stockSearch" action="" method="get">
             <label for="stockSearchBar">Search Stocks Here</label>
-            <input type="text" name="stockSearchBar">
+            <input class="stockSymbolVal" type="text" name="stockSearchBar">
           </form>
           <!-- <section class='stockInfo'>
 
@@ -143,7 +151,7 @@
             <input class="quantityInputVal"type="text" name="quantityInput">
             <button class="buyButton"type="button" name="buyButton">Buy</button>
             <button class="sellButton"type="button" name="sellButton">Sell</button>
-            <output class="creationMessage">Transaction Successful</output>
+            <output class="buyCreationMessage">Purchase Successful</output>
           </form>
         </div>
       </div>
@@ -174,5 +182,6 @@
     <script src="./trade.js" type="text/javascript"></script>
     <script src="./querystring.js" type="text/javascript"></script>
     <script src="./main.js"></script>
+    <script src="./Chart.min.js"></script>
   </body>
 </html>

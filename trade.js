@@ -245,46 +245,65 @@ $('.userSettingsButton').on('click', function(event){
     }
   })
 
+$('.buyButton').on('click', function(event){
+  event.preventDefault();
+  var quantityData = $('.quantityInputVal').val();
+  console.log(quantityData);
+  var stockSymbol = $('.stockSymbolVal').val();
+  console.log(stockSymbol);
+  $.ajax({
+    method: 'POST',
+    url: 'http://localhost:3000/users/buy'
+    // 'https://skbe.herokuapp.com/users/buy'
+    ,
+    data: {symbol: stockSymbol, qty: quantityData},
+    success: buyCreationMessage(),
+    dataType: JSON
+  })
+})
 
- function transactionHandler(){
-   $('.quantity').submit(function(event){
-     event.preventDefault();
-
-     var formData = $('.quantityInputVal').val();
-     console.log(formData);
-     buyStock(formData).then(
-       creationMessage()
-     ).catch(function(error){
-       console.error('Unable to complete transaction', error);
-     });
-   })
+ function buyCreationMessage(){
+   $('.buyCreationMessage').fadeIn(300).delay(2000).fadeOut(300);
+   console.log('Purchase Successful');
+  //  update portfolio
  }
 
- function buyStock(formData){
-   return new Promise(function(resolve, reject){
-     $.ajax({
-       method: 'POST',
-       url: 'https://skbe.herokuapp.com/users/buy',
-       data: formData,
-       success: resolve,
-       error: reject
-     });
-   });
- }
+// Sample Chart
 
- function sellStock(formData){
-   return new Promise(function(resolve, reject){
-     $.ajax({
-       method: 'POST',
-       url: 'https://skbe.herokuapp.com/users/sell',
-       data: formData,
-       success: resolve,
-       error: reject
-     });
-   });
- }
+// var ctx = document.getElementById('sampleChart').getContext('2d');
+// var symbolsData = $.get('http://localhost:3000/symbols/prices');
+// var firstTenNames = function(symbolsData){
+//   var container = [];
+//   for(var i = 0; i < 10; i++){
+//     container.push(symbolsData[i].name);
+//   }
+//   console.log(container);
+//   return container;
+// };
+// console.log(firstTenNames);
+//
+// var firstTenDatapoints = function(symbolsData){
+//   var container = [];
+//   for(var i = 0; i < 10; i++){
+//     container.push(symbolsData[i].current_price);
+//   }
+//   console.log(container);
+//   return container;
+// };
+// console.log(firstTenDatapoints);
+// var chartData = {
+//   labels: firstTenNames,
+//   datasets: [
+//     {
+//     label: "My First dataset",
+//             fillColor: "rgba(220,220,220,0.5)",
+//             strokeColor: "rgba(220,220,220,0.8)",
+//             highlightFill: "rgba(220,220,220,0.75)",
+//             highlightStroke: "rgba(220,220,220,1)",
+//             data: firstTenDatapoints
+//     }
+//   ]
+// }
+// var newChart = new Chart(ctx).Bar(chartData);
 
- function creationMessage(){
-   $('.creationMessage').fadeIn(300).delay(2000).fadeOut(300);
- }
 })
