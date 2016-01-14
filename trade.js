@@ -1,4 +1,7 @@
 $(document).ready(function(){
+  $('.stockSearch').css('display', 'none');
+  $('.quantity').css('display', 'none');
+  $('.deleteAccountForm').css('display', 'none');
   $('.homeButton').on('click', function(event){
     window.location.href = "./index.html";
     $('.aboutButton').css('background-color', 'hsl(226, 96%, 13%)');
@@ -19,6 +22,11 @@ $(document).ready(function(){
     $('#standings').css('display', 'none');
   })
   $('.aboutButton').on('click', function(event){
+    $('.portfolio').css('display', 'none');
+    $('.stockSearch').css('display', 'none');
+    $('.quantity').css('display', 'none');
+    $('.balanceHistory').css('display', 'none');
+    $('.deleteAccountForm').css('display', 'none');
     $('.homeButton').css('background-color', 'hsl(226, 96%, 13%)');
     $('.researchButton').css('background-color', 'hsl(226, 96%, 13%)');
     $('.standingsButton').css('background-color', 'hsl(226, 96%, 13%)');
@@ -38,6 +46,11 @@ $(document).ready(function(){
     $('table').css('display', 'none');
   });
   $('.researchButton').on('click', function(event){
+    $('.portfolio').css('display', 'none');
+    $('.stockSearch').css('display', 'none');
+    $('.quantity').css('display', 'none');
+    $('.balanceHistory').css('display', 'none');
+    $('.deleteAccountForm').css('display', 'none');
     $('.aboutButton').css('background-color', 'hsl(226, 96%, 13%)');
     $('.homeButton').css('background-color', 'hsl(226, 96%, 13%)');
     $('.standingsButton').css('background-color', 'hsl(226, 96%, 13%)');
@@ -57,6 +70,11 @@ $(document).ready(function(){
     $('table').css('display', 'none');
   });
   $('.standingsButton').on('click', function(event){
+    $('.portfolio').css('display', 'none');
+    $('.stockSearch').css('display', 'none');
+    $('.quantity').css('display', 'none');
+    $('.balanceHistory').css('display', 'none');
+    $('.deleteAccountForm').css('display', 'none');
     $('.aboutButton').css('background-color', 'hsl(226, 96%, 13%)');
     $('.researchButton').css('background-color', 'hsl(226, 96%, 13%)');
     $('.homeButton').css('background-color', 'hsl(226, 96%, 13%)');
@@ -76,6 +94,11 @@ $(document).ready(function(){
     $('table').css('display', 'none');
   });
   $('.supportButton').on('click', function(event){
+    $('.portfolio').css('display', 'none');
+    $('.stockSearch').css('display', 'none');
+    $('.quantity').css('display', 'none');
+    $('.balanceHistory').css('display', 'none');
+    $('.deleteAccountForm').css('display', 'none');
     $('.aboutButton').css('background-color', 'hsl(226, 96%, 13%)');
     $('.researchButton').css('background-color', 'hsl(226, 96%, 13%)');
     $('.standingsButton').css('background-color', 'hsl(226, 96%, 13%)');
@@ -94,6 +117,51 @@ $(document).ready(function(){
     $('.tagline').css('display', 'none');
     $('table').css('display', 'none');
  });
+
+ $('.userHomeButton').on('click', function(event){
+   if($('portfolio').css('display', 'none')){
+     $('.portfolio').css('display', '');
+     $('#support').css('display', 'none');
+     $('#about').css('display', 'none');
+     $('#research').css('display', 'none');
+     $('#standings').css('display', 'none');
+     $('.stockSearch').css('display', 'none');
+     $('.quantity').css('display', 'none');
+     $('.deleteAccountForm').css('display', 'none');
+   }
+   if($('.balanceHistory').css('display', 'none')){
+     $('.balanceHistory').css('display', '');
+   }
+ })
+
+$('.tradeButton').on('click', function(event){
+  if($('.stockSearch').css('display', 'none')){
+    $('.stockSearch').css('display', '');
+    $('.quantity').css('display', '');
+    $('.portfolio').css('display', 'none');
+    $('.balanceHistory').css('display', 'none');
+    $('#support').css('display', 'none');
+    $('#about').css('display', 'none');
+    $('#research').css('display', 'none');
+    $('#standings').css('display', 'none');
+    $('.deleteAccountForm').css('display', 'none');
+  }
+})
+
+$('.userSettingsButton').on('click', function(event){
+  if($('.deleteAccountForm').css('display', 'none')){
+    $('.deleteAccountForm').css('display', '');
+    $('.stockSearch').css('display', 'none');
+    $('.quantity').css('display', 'none');
+    $('.portfolio').css('display', 'none');
+    $('.balanceHistory').css('display', 'none');
+    $('#support').css('display', 'none');
+    $('#about').css('display', 'none');
+    $('#research').css('display', 'none');
+    $('#standings').css('display', 'none');
+  }
+})
+
  $('.homeButton').mouseover(function(){
    $(this).css('background-color', 'hsl(125, 62%, 32%)');
  }).mouseout(function(){
@@ -133,12 +201,90 @@ $(document).ready(function(){
    margin.data('interval', setInterval(margin.ticker, 1000/60));
  });
 
- $.get('http://localhost:3000/symbols', function(data){
+ $.get('https://skbe.herokuapp.com/symbols/prices', function(data){
   //  var sortedData = data.sort();
+  //  console.log(data);
    for(var i = 0; i < data.length; i++){
      var stockTickerDiv = document.createElement('div');
-     stockTickerDiv.innerText = data[i].symbol;
+     var price = data[i].current_price;
+     stockTickerDiv.innerText = data[i].symbol + "       " + price + "        " + ((data[i].volume) / 1000) + "k";
      $('.dataContainer').append(stockTickerDiv);
+    //  console.log(stockTickerDiv);
    }
  })
+
+ $.get('https://skbe.herokuapp.com/users/portfolio', function(data){
+   for(var i = 0; i < data.length; i++){
+     var stockRow = document.createElement('tr');
+     $('.portfolio').append(stockRow);
+
+     var symbolField = document.createElement('td');
+     var companyField = document.createElement('td');
+     var numSharesField = document.createElement('td');
+     var ppsField = document.createElement('td');
+     var cspField = document.createElement('td');
+     var percentChangeField = document.createElement('td');
+     var dollarChangeField = document.createElement('td');
+
+     symbolField.innerText = (data[i].symbol);
+     companyField.innerText = (data[i].companyName);
+     numSharesField.innerText = (data[i].shares);
+     ppsField.innerText = ((data[i].value / data[i].shares)).toFixed(2);
+     cspField.innerText = (data[i].currentSharePrice);
+     percentChangeField.innerText = (data[i].percentChange);
+     dollarChangeField.innerText = (data[i].dollarChange);
+
+
+     $(stockRow).append(symbolField);
+     $(stockRow).append(companyField);
+     $(stockRow).append(numSharesField);
+     $(stockRow).append(ppsField);
+     $(stockRow).append(cspField);
+     $(stockRow).append(percentChangeField);
+     $(stockRow).append(dollarChangeField);
+    }
+  })
+
+
+ function transactionHandler(){
+   $('.quantity').submit(function(event){
+     event.preventDefault();
+
+     var formData = $('.quantityInputVal').val();
+     console.log(formData);
+     buyStock(formData).then(
+       creationMessage()
+     ).catch(function(error){
+       console.error('Unable to complete transaction', error);
+     });
+   })
+ }
+
+ function buyStock(formData){
+   return new Promise(function(resolve, reject){
+     $.ajax({
+       method: 'POST',
+       url: 'https://skbe.herokuapp.com/users/buy',
+       data: formData,
+       success: resolve,
+       error: reject
+     });
+   });
+ }
+
+ function sellStock(formData){
+   return new Promise(function(resolve, reject){
+     $.ajax({
+       method: 'POST',
+       url: 'https://skbe.herokuapp.com/users/sell',
+       data: formData,
+       success: resolve,
+       error: reject
+     });
+   });
+ }
+
+ function creationMessage(){
+   $('.creationMessage').fadeIn(300).delay(2000).fadeOut(300);
+ }
 })

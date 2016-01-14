@@ -47,9 +47,11 @@
     </div>
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
+
+        <div class="col-md-6 col-md-offset-3" id="dataButtonsContainer">
           <button class="userHomeButton btn btn-default btn-sm" type="button" name="userHomeButton"><span class="glyphicon glyphicon-home"></span> User Home</button>
-          <button class="tradeButton btn btn-default btn-sm" type="button" name="tradeButton"><img src="./css/increasing10.png" alt="STOCK"></img> Trading</button>
+          <button class="tradeButton btn btn-default btn-sm" type="button" name="tradeButton"><img src="./css/increasing10.png" alt="STOCK">/> Trading</button>
+          <button class="userSettingsButton btn btn-default btn-sm" type="button" name="userSettingsButton"><span class="glyphicon glyphicon-wrench"> User Settings</span></button>
           <button type="button" class="btn btn-default btn-sm" id="logout"><span class="glyphicon glyphicon-log-in"></span> Logout</button>
         </div>
       </div>
@@ -63,7 +65,7 @@
             Stock Kings is a web app that simulates the stock market. Users are able to buy and sell stock, as well as monitor their performance. Users will also be able to see how they stand against others.
           </p>
           <h2>How to play</h2>
-            <p>First, users must sign up via Google or Facebook. Once logged in, users will be able to navigate between their home page and a trading page. On the user's home page, users will be able to see the current stocks they own and purchase price information. On the trading page, users will be able to buy and sell stock and their final balance for the day will be tallied.</p>
+            <p>First, users must sign up via Google. Once logged in, users will be able to navigate between their home page and a trading page. On the user's home page, users will be able to see the current stocks they own and purchase price information. On the trading page, users will be able to buy and sell stock and their final balance for the day will be tallied.</p>
         </div>
       </div>
     </div>
@@ -90,10 +92,10 @@
     </div>
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
-          <h2>Portfolio</h2>
-          <table>
-            <th>
+        <div class="col-md-10 col-md-offset-1">
+          <h2 class="portfolio">Portfolio</h2>
+          <table class="portfolio">
+            <tr>
               <th>Symbol</th>
               <th>Company Name</th>
               <th># of Shares Owned</th>
@@ -101,8 +103,58 @@
               <th>Current Share Price</th>
               <th>% Change</th>
               <th>$ Change</th>
-            </th>
+            </tr>
           </table>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h3 class="balanceHistory">Balance History</h3>
+          <table class="balanceHistory">
+            <tr>
+              <th>Date</th>
+              <th>Ending Balance</th>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="balance"></h3>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <form class="stockSearch" action="" method="get">
+            <label for="stockSearchBar">Search Stocks Here</label>
+            <input type="text" name="stockSearchBar">
+          </form>
+          <!-- <section class='stockInfo'>
+
+          </section> -->
+          <form class="quantity" action="" method="post">
+            <label for="quantityInput">Quantity:</label>
+            <input class="quantityInputVal"type="text" name="quantityInput">
+            <button class="buyButton"type="button" name="buyButton">Buy</button>
+            <button class="sellButton"type="button" name="sellButton">Sell</button>
+            <output class="creationMessage">Transaction Successful</output>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <form class="deleteAccountForm" action="" method="post">
+            <label for="deleteButton">Delete Account</label>
+            <input type="button" name="deleteButton" value="">
+          </form>
         </div>
       </div>
     </div>
