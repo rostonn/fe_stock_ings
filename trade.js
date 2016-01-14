@@ -262,33 +262,45 @@ $('.userSettingsButton').on('click', function(event){
    })
  }
 
- function buyStock(formData){
-   return new Promise(function(resolve, reject){
-     $.ajax({
-       method: 'POST',
-       url: config.host+'/users/buy',
-       //'http://localhost:3000/users/buy',
-      //  'https://skbe.herokuapp.com/users/buy',
-       data: formData,
-       success: resolve,
-       error: reject
-     });
-   });
- }
+ $('.buyButton').on('click', function(event){
+   event.preventDefault();
+   var quantityData = $('.quantityInputVal').val();
+   console.log(quantityData);
+   var stockSymbol = $('.stockSymbolVal').val();
+   console.log(stockSymbol);
+   var data = {
+     symbol: stockSymbol,
+     qty: quantityData
+   }
+   console.log(data);
+   $.ajax({
+     method: 'POST',
+     url: config.host+'/users/buy',
+     // 'https://skbe.herokuapp.com/users/buy'
+     data: data,
+     success: buyCreationMessage(),
+     dataType: JSON
+   })
+ })
+  function buyCreationMessage(){
+    $('.buyCreationMessage').fadeIn(300).delay(2000).fadeOut(300);
+    console.log('Purchase Successful');
+   //  update portfolio
+  }
 
- function sellStock(formData){
-   return new Promise(function(resolve, reject){
-     $.ajax({
-       method: 'POST',
-       url: config.host+'/users/sell',
-       //'http://localhost:3000/users/sell'
-      //  'https://skbe.herokuapp.com/users/sell',
-       data: formData,
-       success: resolve,
-       error: reject
-     });
-   });
- }
+ // function sellStock(formData){
+ //   return new Promise(function(resolve, reject){
+ //     $.ajax({
+ //       method: 'POST',
+ //       url: config.host+'/users/sell',
+ //       //'http://localhost:3000/users/sell'
+ //      //  'https://skbe.herokuapp.com/users/sell',
+ //       data: formData,
+ //       success: resolve,
+ //       error: reject
+ //     });
+ //   });
+ // }
 
  function creationMessage(){
    $('.creationMessage').fadeIn(300).delay(2000).fadeOut(300);
