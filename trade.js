@@ -201,7 +201,8 @@ $('.userSettingsButton').on('click', function(event){
    margin.data('interval', setInterval(margin.ticker, 1000/60));
  });
 
- $.get('https://skbe.herokuapp.com/symbols/prices', function(data){
+ $.get(config.host+'/symbols/prices', function(data){
+ //https://skbe.herokuapp.com/symbols/prices'
   //  var sortedData = data.sort();
   //  console.log(data);
    for(var i = 0; i < data.length; i++){
@@ -213,7 +214,8 @@ $('.userSettingsButton').on('click', function(event){
    }
  })
 
- $.get('https://skbe.herokuapp.com/users/portfolio', function(data){
+ $.get(config.host+'/users/portfolio', function(data){
+   //'https://skbe.herokuapp.com/users/portfolio'
    for(var i = 0; i < data.length; i++){
      var stockRow = document.createElement('tr');
      $('.portfolio').append(stockRow);
@@ -264,7 +266,9 @@ $('.userSettingsButton').on('click', function(event){
    return new Promise(function(resolve, reject){
      $.ajax({
        method: 'POST',
-       url: 'https://skbe.herokuapp.com/users/buy',
+       url: config.host+'/users/buy',
+       //'http://localhost:3000/users/buy',
+      //  'https://skbe.herokuapp.com/users/buy',
        data: formData,
        success: resolve,
        error: reject
@@ -276,7 +280,9 @@ $('.userSettingsButton').on('click', function(event){
    return new Promise(function(resolve, reject){
      $.ajax({
        method: 'POST',
-       url: 'https://skbe.herokuapp.com/users/sell',
+       url: config.host+'/users/sell',
+       //'http://localhost:3000/users/sell'
+      //  'https://skbe.herokuapp.com/users/sell',
        data: formData,
        success: resolve,
        error: reject

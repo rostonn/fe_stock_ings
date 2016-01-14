@@ -1,3 +1,4 @@
+
 $.ajaxSetup({
  xhrFields: {
    withCredentials: true
@@ -5,12 +6,14 @@ $.ajaxSetup({
 })
 
 $('.btn-google').click(function(){
- window.location='https://skbe.herokuapp.com/auth/google'
+ window.location= config.host+'/auth/google';
+ // 'https://skbe.herokuapp.com/auth/google'
 })
 
 $('#logout').click(function(){
 
- $.get('https://skbe.herokuapp.com/auth/logout')
+ $.get(config.host+'/auth/logout')
+  //  'https://skbe.herokuapp.com/auth/logout')
 
  .done(function(data){
   //  console.log(data)
@@ -24,7 +27,8 @@ $('#logout').click(function(){
  })
 })
 
-$.get('https://skbe.herokuapp.com/symbols/prices').done(function(data){
+$.get(config.host+'/symbols/prices').done(function(data){
+  // 'https://skbe.herokuapp.com/symbols/prices')
  console.log(data)
 }).fail(function(error){
  console.log(error)

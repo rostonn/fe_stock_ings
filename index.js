@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
   var greeting = $('#greeting');
   greeting.fadeOut(3000, function(){
@@ -136,7 +137,8 @@ $(document).ready(function(){
    margin.data('interval', setInterval(margin.ticker, 1000/60));
  });
 
- $.get('https://skbe.herokuapp.com/symbols/prices', function(data){
+ $.get(config.host+'/symbols/prices', function(data){
+   //'https://skbe.herokuapp.com/symbols/prices'
   //  var sortedData = data.sort();
   //  console.log(data);
    for(var i = 0; i < data.length; i++){
