@@ -104,6 +104,9 @@ body {
     .tagline {
       display: flex;
       justify-content: center;
+      font-size: 22px;
+      margin-top: 25px;
+      text-align: justify;
     }
     .signin {
       display: flex;
@@ -122,6 +125,9 @@ body {
       border-radius: 5px;
       height: 300px;
       margin-bottom: 10px;
+      table{
+        border: none;
+      }
     }
     #about {
       display: none;
@@ -134,6 +140,52 @@ body {
     }
     #support {
       display: none;
+    }
+
+    #dataButtonsContainer{
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-around;
+    }
+    table{
+      display: flex;
+      justify-content: center;
+      border: 2px solid $border-color;
+      border-radius: 5px;
+      th{
+        color: $font-color;
+        font-family: $font-stack;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 5px;
+        text-decoration: underline;
+        text-align: center;
+      }
+      td{
+        color: $font-color;
+        font-family: $font-stack;
+        text-align: center;
+      }
+    }
+    .stockSearch{
+      display: flex;
+      flex-direction: column;
+      label{
+        color: $font-color;
+        font-family: $font-stack;
+      }
+      input{
+        width: 50%;
+      }
+    }
+    .quantity{
+      label{
+        color: $font-color;
+        font-family: $font-stack;
+      }
+      input{
+        width: 8%;
+      }
     }
     footer {
       display: flex;

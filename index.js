@@ -136,14 +136,15 @@ $(document).ready(function(){
    margin.data('interval', setInterval(margin.ticker, 1000/60));
  });
 
- $.get('http://localhost:3000/symbols', function(data){
+ $.get('https://skbe.herokuapp.com/symbols/prices', function(data){
   //  var sortedData = data.sort();
-   console.log(data);
+  //  console.log(data);
    for(var i = 0; i < data.length; i++){
      var stockTickerDiv = document.createElement('div');
-     stockTickerDiv.innerText = data[i].symbol;
+     var price = data[i].current_price;
+     stockTickerDiv.innerText = data[i].symbol + "       " + price + "        " + ((data[i].volume) / 1000) + "k";
      $('.dataContainer').append(stockTickerDiv);
-     console.log(stockTickerDiv);
+    //  console.log(stockTickerDiv);
    }
  })
 })
