@@ -1,5 +1,5 @@
 config = {
-  host:'http://localhost:3000'
+  host:'https://skbe.herokuapp.com'
 };
 
 //Production
