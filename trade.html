@@ -23,7 +23,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3">
-          <h1>Stock Kings</h1>
+          <h1><span class="glyphicon glyphicon-usd"></span>Stock Kings</h1>
         </div>
         <div class="col-md-9">
           <nav>
@@ -93,18 +93,26 @@
     <div class="container">
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
-          <h2 class="portfolio">Portfolio</h2>
+          <h2 class='portfolioHead'>Portfolio</h2>
           <table class="portfolio">
-            <tr>
+            <!-- <tr>
               <th>Symbol</th>
               <th>Company Name</th>
               <th># of Shares Owned</th>
               <th>Purchase Price per Share</th>
               <th>Current Share Price</th>
+              <th>Total Value</th>
               <th>% Change</th>
               <th>$ Change</th>
-            </tr>
+            </tr> -->
           </table>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <h3 class="balance">Balance: </h3>
         </div>
       </div>
     </div>
@@ -121,16 +129,10 @@
         </div>
       </div>
     </div>
+
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
-          <h3 class="balance"></h3>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-10 col-md-offset-1">
           <form class="stockSearch" action="" method="get">
             <label for="stockSearchBar">Search Stocks Here</label>
             <input class='stockSymbolVal' type="text" name="stockSearchBar">
@@ -141,9 +143,9 @@
           <form class="quantity" action="" method="post">
             <label for="quantityInput">Quantity:</label>
             <input class="quantityInputVal"type="text" name="quantityInput">
-            <button class="buyButton"type="button" name="buyButton">Buy</button>
-            <button class="sellButton"type="button" name="sellButton">Sell</button>
-            <output class="creationMessage">Transaction Successful</output>
+            <button class="buyButton" type="button" name="buyButton">Buy</button>
+            <button class="sellButton" type="button" name="sellButton">Sell</button>
+            <!-- <output class="creationMessage">Transaction Successful</output> -->
           </form>
         </div>
       </div>

@@ -149,4 +149,87 @@ $(document).ready(function(){
     //  console.log(stockTickerDiv);
    }
  })
+
+ function getAllTimeStats(){
+   $.get(config.host+'/game/alltime',function(data){
+     console.log('GET ALL TIME STATS');
+      console.log(data);
+      $('#allTimeLeaderboard').empty();
+      var header = '<tr><th>First Name</th><th>Last Name</th><th>Balance</th></tr>';
+      $('#allTimeLeaderboard').append(header);
+      data.forEach(function(user){
+        var row = '<tr><td>'+user.first_name+'</td><td>'+user.last_name+'</td><td> $ '+user.sum+'</td></tr>';
+        $('#allTimeLeaderboard').append(row);
+      })
+ })
+}
+
+$.get(config.host+'/game/status', function(data){
+  console.log(data);
+  $('#gameStatus').empty();
+  var header = '<tr><th>First Name</th><th>Last Name</th><th>Balance</th></tr>';
+  $('#gameStatus').append(header);
+
+  for(var i = 0; i < data.length; i++){
+    var gameStatusRow = document.createElement('tr');
+    $('#gameStatus').append(gameStatusRow);
+
+    var firstNameField = document.createElement('td');
+    var lastNameField = document.createElement('td');
+    var profitLossField = document.createElement('td');
+
+    firstNameField.innerText = data[i].first_name;
+    lastNameField.innerText = data[i].last_name;
+    profitLossField.innerText = (data[i].profit_loss).toFixed(2) + '%';
+
+    $(gameStatusRow).append(firstNameField);
+    $(gameStatusRow).append(lastNameField);
+    $(gameStatusRow).append(profitLossField);
+  }
+})
+
+
+ // function gameStatus(){
+ //   $.get(config.host+'/game/status',function(data){
+ //      console.log('GAME STATUS = ');
+ //      console.log(data);
+ //      $('#currentDate').empty();
+ //
+ //
+ //      var date = data[0].game_date;
+ //      $('#currentDate').append(date);
+ //      $('#gameStatus').empty();
+ //      var header = '<tr><th>First Name</th><th>Last Name</th><th>Balance</th></tr>'
+ //        $('#gameStatus').append(header);
+ //
+ //          $('#gameStatus').append('<tr>');
+ //
+ //          var firstName = '<td>'+ data[0].first_name+'</td>';
+ //          var lastName = '<td>' + data[0].last_name+'</td>';
+ //
+ //            $('#gameStatus').append(firstName);
+ //            $('#gameStatus').append(lastName);
+ //
+ //            $('#gameStatus').append(lastName);
+ //            $('#gameStatus').append('</tr>');
+        // data.forEach(function(user){
+        //   console.log(user);
+        //   $('#gameStatus').append('<tr>');
+        //
+        //   var firstName = '<td>'+ user.first_name+'</td>';
+        //   var lastName = '<td>' + user.last_name+'</td>';
+        //   var profit = '<td>'+user.profit_loss*100+' %</td>'
+        //
+        //   $('#gameStatus').append(firstName);
+        //   $('#gameStatus').append(lastName);
+        //   $('#gameStatus').append(profit);
+        //   $('#gameStatus').append('</tr>')
+        // })
+ //   })
+ // }
+
+// gameStatus();
+getAllTimeStats();
+
+
 })

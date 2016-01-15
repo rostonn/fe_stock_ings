@@ -19,7 +19,7 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script src="./config.js"></script>
+
   </head>
   <body>
     <div class="container">
@@ -33,7 +33,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-3">
-            <h1>Stock Kings</h1>
+            <h1><span class="glyphicon glyphicon-usd"></span>Stock Kings</h1>
           </div>
           <div class="col-md-9">
             <nav>
@@ -122,13 +122,9 @@
           <div class="col-md-6">
             <section class="leaderboard">
               <h3><u>Today's Leaderboard</u></h3>
-              <p><i>Current Date</i></p>
-              <table>
-                <tr>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Balance</th>
-                </tr>
+              <p><i id="currentDate"></i></p>
+              <table id="gameStatus">
+        
               </table>
             </section>
           </div>
@@ -136,7 +132,7 @@
             <section class="leaderboard">
               <h3><u>All-Time Leaderboard</u></h3>
               <p><i>Since January 14th, 2016</i></p>
-              <table>
+              <table id='allTimeLeaderboard'>
                 <tr>
                   <th>First Name</th>
                   <th>Last Name</th>
@@ -158,7 +154,7 @@
       </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-
+    <script src="./config.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

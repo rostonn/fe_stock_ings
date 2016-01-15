@@ -143,4 +143,8 @@ body {
     align-items: flex-end;
     margin-top: 10px; }
 
+  body .container .balanceHistory{
+    display: none;
+  }
+
 /*# sourceMappingURL=styles.css.map */
