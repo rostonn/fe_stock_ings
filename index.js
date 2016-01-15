@@ -180,7 +180,7 @@ $.get(config.host+'/game/status', function(data){
 
     firstNameField.innerText = data[i].first_name;
     lastNameField.innerText = data[i].last_name;
-    profitLossField.innerText = (data[i].profit_loss).toFixed(2) + '%';
+    profitLossField.innerText ='$ '+ (data[i].profit_loss).toFixed(2);
 
     $(gameStatusRow).append(firstNameField);
     $(gameStatusRow).append(lastNameField);
