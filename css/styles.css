@@ -87,6 +87,7 @@ body {
     margin-bottom: 10px; }
   body .container .leaderboard {
     display: flex;
+    overflow: auto;
     align-items: center;
     flex-direction: column;
     border: 2px solid #4d4d4d;
